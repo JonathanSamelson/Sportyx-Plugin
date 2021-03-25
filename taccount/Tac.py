@@ -31,8 +31,8 @@ class Tac( ServerAdmin ):
 		await self.instance.permission_manager.register('waitingmap', 'set waiting map', app=self.app, min_level=2)
 		await self.instance.command_manager.register(
 			Command(command='omerde', target=self.get_top),
-			Command(command='locdel', target=self.delete_locals, perms='tacount:locdel', admin=True),
-			Command(command='waitingmap', target=self.waiting_map, perms='tacount:waitingmap', admin=True),
+			Command(command='locdel', target=self.delete_locals, admin=True),
+			Command(command='waitingmap', target=self.waiting_map, admin=True),
 			Command(command='test', target=self.db_debug),
 			)
 			
